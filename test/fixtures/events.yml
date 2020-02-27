@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date_attended: 2020-02-27
+  note: MyString
+  friend: one
+
+two:
+  title: MyString
+  date_attended: 2020-02-27
+  note: MyString
+  friend: two
