@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Date attended</th>
+      <th>Date Attended</th>
       <th>Note</th>
-      <th>Friend</th>
+      <th>Friend Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= event.title %></td>
         <td><%= event.date_attended %></td>
         <td><%= event.note %></td>
-        <td><%= event.friend_id %></td>
+        <td><%= event.friend.name %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

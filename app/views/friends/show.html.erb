@@ -20,5 +20,31 @@
   <%= @friend.status %>
 </p>
 
+<h2>
+  Events
+</h2>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date Attended</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @friend.events.each do |event| %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.date_attended %></td>
+      <td><%= event.note %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_friend_path(@friend) %> |
 <%= link_to 'Back', friends_path %>

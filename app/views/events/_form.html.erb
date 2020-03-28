@@ -28,7 +28,12 @@
 
   <div class="field">
     <%= form.label :friend_id %>
-    <%= form.select :friend_id, Friend.all.collect { |p| [ p.first_name + ' ' + p.last_name + ' - ' + p.status.capitalize, p.id] }, include_blank: true %>
+    <%= form.select :friend_id,
+      Friend.all.collect {
+        |friend| [ "#{friend.name} - #{friend.status.capitalize}",
+        friend.id ]
+      },
+      include_blank: true %>
   </div>
 
   <div class="actions">
