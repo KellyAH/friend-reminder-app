@@ -16,16 +16,18 @@ In the future: It will send you email reminders for friends you have not spent t
 1. Install dependencies: `bundle install`
 
 ## Local Docker Environment
+[Learn about Docker](https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application)
+
 1. Install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 1. Go into the repo directory: `cd [repo_name]`
-1. Build Docker Image from Dockerfile: `docker build .`
+1. Build Docker Image from Dockerfile: `docker build -t demo .`
 1. Build and run Docker Container Image from Docker Image `docker container run`
 Rails server will auto start. 
 
 
 # Start Server
 ## Local Server
-1. `rails server`
+1. `rails server` or `bundle exec rails server`
 
 
 ## Local Docker Server
