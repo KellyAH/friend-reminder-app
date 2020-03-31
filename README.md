@@ -15,12 +15,12 @@ In the future: It will send you email reminders for friends you have not spent t
 1. Go into the repo directory: `cd [repo_name]`
 1. Install dependencies: `bundle install`
 
-## Local Docker Environment
+## Local Docker Environment - BROKEN RIGHT NOW
 [Learn about Docker](https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application)
 
 1. Install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 1. Go into the repo directory: `cd [repo_name]`
-1. Build Docker Image from Dockerfile: `docker build -t demo .`
+1. Build Docker Image from Dockerfile: `docker build -t friend-reminder .`
 1. Build and run Docker Container Image from Docker Image `docker container run`
 Rails server will auto start. 
 
@@ -30,7 +30,7 @@ Rails server will auto start.
 1. `rails server` or `bundle exec rails server`
 
 
-## Local Docker Server
+## Local Docker Server  - BROKEN RIGHT NOW
 1. Build and run Docker Container Image from Docker Image `docker container run`
 rails server auto starts when running the docker container.
 
