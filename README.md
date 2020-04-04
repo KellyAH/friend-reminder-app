@@ -54,7 +54,7 @@ Minimum Viable Product
 
 # Setup
 ### First Time Setup
-## Local Environment
+## Local Environment - Don't do this right now. Wait for dockerfile to be fixed!
 Requires Ruby 2.5.3. and Rails 6.0.2.1 - See [Gemfile](https://github.com/KellyAH/friend-reminder-app/blob/master/Gemfile)
 You can get ruby from [here](https://www.ruby-lang.org/en/downloads/).
 You can get rails from here - TBD
