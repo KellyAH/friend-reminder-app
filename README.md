@@ -3,11 +3,11 @@
 This rails app helps you keep track of your friends and what events you attended together.
 In the future: It will send you email reminders for friends you have not spent time with in awhile.
 
-###What's done:
+### What's done:
 * CRUD friends and events pages
 * set up deploys on heroku
 
-###What still needs to be done:
+### What still needs to be done:
  * setup email server - sendgrid templates
  * setup sidekick job scheduler
  * create unit tests
@@ -15,7 +15,7 @@ In the future: It will send you email reminders for friends you have not spent t
  * make frontend pretties - bootstrap UI? react?
  
  
-###Use Cases
+### Use Cases
 As a user I can, go to an app FE and 
 * See a list of all my friends (first name, last name, email, status [active, deactivated])
 * Add a new friend
