@@ -83,5 +83,11 @@ Rails server will auto start.
 rails server auto starts when running the docker container.
 
 # Go to Front End
+
+## on Local
 * Go to Friends page [http://localhost:3000/friends](http://localhost:3000/friends)
 * Go to Events page [http://localhost:3000/events](http://localhost:3000/events)
+
+## on Production
+* Go to Friends page [https://friend-reminder-app.herokuapp.com/friends](https://friend-reminder-app.herokuapp.com/friends)
+* Go to Events page [https://friend-reminder-app.herokuapp.com/events](https://friend-reminder-app.herokuapp.com/events)
