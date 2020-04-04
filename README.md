@@ -11,6 +11,8 @@ In the future: It will send you email reminders for friends you have not spent t
 # Setup
 ### First Time Setup
 ## Local Environment
+Requires Ruby 2.5.3. and Rails 6.0.2.1 - See [Gemfile](https://github.com/KellyAH/friend-reminder-app/blob/master/Gemfile)
+
 1. Clone down this repo: `git clone [repo_name]`
 1. Go into the repo directory: `cd [repo_name]`
 1. Install dependencies: `bundle install`
