@@ -21,14 +21,30 @@ WORKDIR /friend_reminder_app
 # will be cached unless changes to one of those two files
 # are made.
 
-# install rails?
-RUN gem install rails bundler
-COPY Gemfile Gemfile.lock ./
-COPY Gemfile Gemfile
-RUN gem install bundler && bundle install
-
 # Copy the main application.
 COPY . ./
+#RUN pwd
+#RUN cd ..
+#RUN ls
+#COPY ../Gemfile.lock ./
+#COPY ../Gemfile ./
+
+# NOTE: if need to use webpacker for JS FE stuff, uncomment webpacker in gemfile and install node, install yarn
+
+#HWK: update ruby to 2.7.1 install on personal mac and work mac
+# install ruby 2.7.1 via rbenv
+# update ruby version FROM in Dockerfile
+# create .ruby-version file
+# update ruby version in Gemfile
+# move to a new tab in terminal app
+# gem install bundler
+# bundle
+
+
+# install rails?
+# RUN gem install rails bundler
+RUN gem install bundler && bundle install
+
 
 # Expose port 3000 to the Docker host, so we can access it
 # from the outside.
