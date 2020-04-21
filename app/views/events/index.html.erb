@@ -2,6 +2,29 @@
 
 <h1>Events</h1>
 
+# insert friend drop down filter here
+# get list of friends to populate dropdown
+# when friend is selected, display only events for that friend
+<form action="/events">
+  <fieldset>
+    <legend>Filters</legend>
+
+    #TODO clean this up!
+    <label id="friend_id">Friend:</label>
+    <select name="friend_id" id="friend_id">
+      <option value="">All</option>
+      <% @friends.each do |friend| %>
+        <option value="<%= friend.id %>" <%= params[:friend_id] == friend.id.to_s ? 'selected' : '' %>><%= friend.name %></option>
+      <% end %>
+    </select>
+
+    <button>
+      Submit
+    </button>
+  </fieldset>
+</form>
+
+
 <table>
   <thead>
     <tr>

@@ -36,7 +36,7 @@
   </thead>
 
   <tbody>
-  <% @friend.events.each do |event| %>
+  <% @friend.events_descending.each do |event| %>
     <tr>
       <td><%= event.title %></td>
       <td><%= event.date_attended %></td>

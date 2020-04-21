@@ -5,8 +5,10 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @friends = Friend.all
   end
 
+  #TODO make method to do homework
   # GET /events/1
   # GET /events/1.json
   def show

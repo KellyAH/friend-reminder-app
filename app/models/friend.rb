@@ -6,4 +6,8 @@ class Friend < ApplicationRecord
   def name
     "#{first_name} #{last_name}"
   end
+
+  def events_descending
+    events.order(date_attended: :desc)
+  end
 end
