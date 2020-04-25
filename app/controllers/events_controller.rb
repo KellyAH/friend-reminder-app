@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = params[:friend_id].present? ? Event.where(friend_id: params[:friend_id]) : Event.all
     @friends = Friend.all
   end
 
@@ -13,6 +13,11 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
   end
+
+  def show_text
+    render plain: "hi"
+  end
+
 
   # GET /events/new
   def new
