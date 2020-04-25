@@ -5,7 +5,6 @@ class FriendsController < ApplicationController
   # GET /friends.json
   def index
     @friends = Friend.all
-    render plain: "hi"
   end
 
   # GET /friends/1
