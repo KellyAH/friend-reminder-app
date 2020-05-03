@@ -3,6 +3,60 @@
 This rails app helps you keep track of your friends and what events you attended together.
 In the future: It will send you email reminders for friends you have not spent time with in awhile.
 
+* [Installation](#installation)
+* [Local Docker Environment Setup](#local-docker-environment)
+  * [About Docker](#about-docker)
+* [Start Server](#start-server)
+* [ToDo](#todo)
+  * [Envisioned Architecture](#envisioned-architecture)
+
+# Installation
+The app runs on Ruby 2.5.3. and Rails 6.0.2.1.
+
+## Local Docker Environment
+1. Install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
+1. Go into the repo directory: `cd [repo_name]`
+1. Build a Docker Image from the Dockerfile: `docker build -t friend-reminder:latest .`
+1. Build and run a Docker Container from the Docker Image
+```
+docker container run --name friend-reminder-app -v [path to your local repo]:/friend_reminder_app -p 3000:3000 friend-reminder:latest
+```
+This will start the rails server for the friend reminder app inside a Docker Container.
+And map the Rails server port inside the container to your local so you can see the app running in the container by going to:
+* Go to Friends page [http://localhost:3000/friends](http://localhost:3000/friends)
+* Go to Events page [http://localhost:3000/events](http://localhost:3000/events)
+
+It also mounts your local repo to the repo inside the container so changes made on your local are reflected in the running container.
+
+### Troubleshooting
+Start a shell running in the container to look at the files inside it:
+```
+docker container exec -it friend-reminder-app sh
+``` 
+
+### About Docker
+New to Docker? Learn the big picture [here](https://www.youtube.com/watch?v=CcxbHkqzJuI&t=31s) and about Dockerfiles  [here](https://www.youtube.com/watch?v=-2X4JP3HgYU&t=5s).
+Check out free video tutorials [here](https://learndocker.online)
+[Docker reference] (https://towardsdatascience.com/15-docker-commands-you-should-know-970ea5203421)
+
+# Start Server
+## Local Docker Environment
+Rails server automatically starts when running the container. See [Local Docker Environment Setup](#local-docker-environment).
+
+# Go to the Front End
+
+## In Local Docker Environment
+* Go to Friends page [http://localhost:3000/friends](http://localhost:3000/friends)
+* Go to Events page [http://localhost:3000/events](http://localhost:3000/events)
+
+## on Production in Heroku
+* Go to Friends page [https://friend-reminder-app.herokuapp.com/friends](https://friend-reminder-app.herokuapp.com/friends)
+* Go to Events page [https://friend-reminder-app.herokuapp.com/events](https://friend-reminder-app.herokuapp.com/events)
+
+
+## ToDo
+See [Friend-reminder-app Planning doc](https://docs.google.com/document/d/1RC6Yu1T5fuwjNYEb6hjdXqkopKkbILrpYNkQJKn10Cg/edit)
+
 ### What's done:
 * CRUD friends and events pages
 * set up deploys on heroku
@@ -13,8 +67,7 @@ In the future: It will send you email reminders for friends you have not spent t
  * create unit tests
  * create front end tests - cypress?
  * make frontend pretties - bootstrap UI? react?
- 
- 
+  
 ### Use Cases
 As a user I can, go to an app FE and 
 * See a list of all my friends (first name, last name, email, status [active, deactivated])
@@ -48,46 +101,5 @@ Minimum Viable Product
 * Send test email via sendgrid to my email
 
 
-## Envisioned Planned Architecture
+## Envisioned Architecture
 ![](architecture.png)
-
-
-# Setup
-### First Time Setup
-## Local Environment - Don't do this right now. Wait for dockerfile to be fixed!
-Requires Ruby 2.5.3. and Rails 6.0.2.1 - See [Gemfile](https://github.com/KellyAH/friend-reminder-app/blob/master/Gemfile)
-You can get ruby from [here](https://www.ruby-lang.org/en/downloads/).
-You can get rails from here - TBD
-
-1. Clone down this repo: `git clone [repo_name]`
-1. Go into the repo directory: `cd [repo_name]`
-1. Install dependencies: `bundle install`
-
-## Local Docker Environment - BROKEN RIGHT NOW
-[Learn about Docker](https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application)
-
-1. Install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
-1. Go into the repo directory: `cd [repo_name]`
-1. Build Docker Image from Dockerfile: `docker build -t friend-reminder .`
-1. Build and run Docker Container Image from Docker Image `docker container run`
-Rails server will auto start. 
-
-
-# Start Server
-## Local Server
-1. `rails server` or `bundle exec rails server`
-
-
-## Local Docker Server  - BROKEN RIGHT NOW
-1. Build and run Docker Container Image from Docker Image `docker container run`
-rails server auto starts when running the docker container.
-
-# Go to Front End
-
-## on Local
-* Go to Friends page [http://localhost:3000/friends](http://localhost:3000/friends)
-* Go to Events page [http://localhost:3000/events](http://localhost:3000/events)
-
-## on Production
-* Go to Friends page [https://friend-reminder-app.herokuapp.com/friends](https://friend-reminder-app.herokuapp.com/friends)
-* Go to Events page [https://friend-reminder-app.herokuapp.com/events](https://friend-reminder-app.herokuapp.com/events)
