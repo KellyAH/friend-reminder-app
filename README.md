@@ -7,6 +7,7 @@ In the future: It will send you email reminders for friends you have not spent t
 * [Local Docker Environment Setup](#local-docker-environment)
   * [About Docker](#about-docker)
 * [Start Server](#start-server)
+* [Troubleshooting](#troubleshooting)
 * [ToDo](#todo)
   * [Envisioned Architecture](#envisioned-architecture)
 
@@ -28,11 +29,25 @@ And map the Rails server port inside the container to your local so you can see 
 
 It also mounts your local repo to the repo inside the container so changes made on your local are reflected in the running container.
 
+To stop the server and the container it's running in: `Ctrl+C`
+
 ### Troubleshooting
+See if the container is running: `docker container ls -a`
+* If STATUS is: `Exited` then the container has stopped.
+* If STATUS is: `Up` then the container is running and the Rails server is running.
+
+To start the container and the rails server up again:
+1. Get the `CONTAINER ID` via: `docker container ls -a`
+1. start the rails server and the container it runs in: `docker container start [CONTAINER ID]`
+
+To stop the rails server and the container it runs in: `docker container stop [CONTAINER ID]`
+
 Start a shell running in the container to look at the files inside it:
-```
-docker container exec -it friend-reminder-app sh
-``` 
+In a new terminal window run: `docker container exec -it friend-reminder-app sh`
+* To exit: `exit + ENTER key`
+
+Tail logs for the rails server inside the container via: `docker container logs -f [CONTAINER ID]`
+* To stop tailing logs: `Ctrl+C`
 
 ### About Docker
 New to Docker? Learn the big picture [here](https://www.youtube.com/watch?v=CcxbHkqzJuI&t=31s) and about Dockerfiles  [here](https://www.youtube.com/watch?v=-2X4JP3HgYU&t=5s).
