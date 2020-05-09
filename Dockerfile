@@ -17,6 +17,12 @@ COPY . ./
 
 RUN gem install bundler && bundle install
 
+# set rails env for development
+ENV RAILS_ENV development
+
+# build database
+RUN rails db:migrate
+
 # Expose port 3000 to the Docker host, so we can access it
 # from the outside.
 EXPOSE 3000
