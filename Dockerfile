@@ -15,9 +15,6 @@ WORKDIR /friend_reminder_app
 # Copy the main application.
 COPY . ./
 
-# delete rails server processes id file copied from local repo so server can start
-RUN rm tmp/pids/server.pid
-
 # install bundler and gems
 RUN gem install bundler && bundle install
 
