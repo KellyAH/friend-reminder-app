@@ -17,11 +17,8 @@ The app runs on Ruby 2.5.3. and Rails 6.0.2.1.
 ## Local Docker Environment
 1. Install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 1. Go into the repo directory: `cd [repo_name]`
-1. Build a Docker Image from the Dockerfile: `docker build -t friend-reminder:latest .`
-1. Build and run a Docker Container from the Docker Image
-```
-docker container run --name friend-reminder-app -v [path to your local repo]:/friend_reminder_app -p 3000:3000 friend-reminder:latest
-```
+1. run dev setup script: `sh script/setup_dev_env.sh`
+
 This will start the rails server for the friend reminder app inside a Docker Container.
 And map the Rails server port inside the container to your local so you can see the app running in the container by going to:
 * Go to Friends page [http://localhost:3000/friends](http://localhost:3000/friends)
