@@ -1,5 +1,10 @@
 #!/bin/bash
 set -e
+
+# This script will run the friend reminder app rails server inside a container
+# and map the container port to your local so you can see the rails front end on your local.
+# and mount your local repo to the container so local changes are reflected in the container.
+
 image_name="friend-reminder"
 image_name_and_tag="friend-reminder:latest"
 container_name="friend-reminder-app"
@@ -51,4 +56,5 @@ docker container run -d --name ${container_name} -p 3000:3000 ${image_name_and_t
 docker exec ${container_name} sh -c "rails db:migrate RAILS_ENV=development"
 
 echo "${container_name} is now running. You can see the front end at: http://localhost:3000/friends"
+echo "Tail the server logs via: docker container logs -f friend-reminder-app"
 #TODO: create and run seed data so devs don't need to keep creating their own data manually
