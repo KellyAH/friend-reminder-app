@@ -14,35 +14,23 @@ container_name="friend-reminder-app"
 
 #
 ## -- PRE-CLEAN UP --
-
-# Stops and deletes the friend-reminder-app container only if its running.
-# This allows the script to be run repeatadly.
-
 # Forcefully delete the container if it exists - this will automatically stop it
+# This allows the script to be run repeatadly.
 docker container rm -f ${container_name} > /dev/null 2>&1 || true
 
-#TODO delete container if it's not running but it exists
-# TEST IF THIS WORKS
-#if [ "$(docker ps -aq --filter "name=${container_name}" 2>/dev/null)" = "true" ];
-#  then
-#    docker container rm ${container_name} > /dev/null 2>&1
-#    echo "PRE-CLEAN UP: Deleted ${container_name} container."
-#  else
-#    echo "no pre clean up needed"
-#fi
+# Delete server.pid in local repo so it isn't copied into the container which will prevent rails from starting.
+FILE=tmp/pids/server.pid
+if [ -f "$FILE" ]; then
+  rm $FILE
+  echo "Deleted $FILE in local repo."
+fi
 
 #
 ## -- SET-UP --
-
 # Build image from Dockerfile.
 docker build -t ${image_name_and_tag} .
 
-# Use docker image to spin up container.
-# This will also start the rails server.
-# This must run in detached mode else the belwo migration command won't ever execute.
-#docker container run -d --name ${container_name} -p 3000:3000 ${image_name_and_tag}
-
-# build and start container and start rails server
+# Use docker image to build and start the container. This also starts the rails server
 # container must run in detached mode else exec commands won't execute
 docker container run -d --name ${container_name} -v $PWD:/friend_reminder_app:cached -p 3000:3000 ${image_name_and_tag}
 
