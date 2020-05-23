@@ -42,8 +42,13 @@ docker build -t ${image_name_and_tag} .
 # This must run in detached mode else the belwo migration command won't ever execute.
 #docker container run -d --name ${container_name} -p 3000:3000 ${image_name_and_tag}
 
-# run command inside the running container to create an empty database
-docker container run --rm -e RAILS_ENV=development ${container_name} rails db:create db:migrate
+# build and start container and start rails server
+# container must run in detached mode else exec commands won't execute
+docker container run -d --name ${container_name} -v $PWD:/friend_reminder_app:cached -p 3000:3000 ${image_name_and_tag}
 
-# Start the container in the foreground and use exec to replace the current process
-exec docker container run --rm -e RAILS_ENV=development --name ${container_name} -v $PWD:/friend_reminder_app -p 3000:3000 ${image_name_and_tag}
+# run command inside the running container to create an empty database
+docker exec ${container_name} sh -c "RAILS_ENV=development rails db:create db:migrate"
+
+echo "${container_name} is now running. You can see the front end at: http://localhost:3000/friends"
+echo "Tail the server logs via: docker container logs -f friend-reminder-app"
+#TODO: create and run seed data so devs don't need to keep creating their own data manually ${container_name} -v $PWD:/friend_reminder_app -p 3000:3000 ${image_name_and_tag}
