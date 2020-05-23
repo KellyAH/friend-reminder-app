@@ -46,6 +46,9 @@ docker build -t ${image_name_and_tag} .
 # container must run in detached mode else exec commands won't execute
 docker container run -d --name ${container_name} -v $PWD:/friend_reminder_app:cached -p 3000:3000 ${image_name_and_tag}
 
+# wait for rails server to spin up
+sleep 5
+
 # run command inside the running container to create an empty database
 docker exec ${container_name} sh -c "RAILS_ENV=development rails db:create db:migrate"
 
