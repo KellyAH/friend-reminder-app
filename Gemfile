@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.5.3'
 
 gem 'rails',      '6.0.2.1'
 gem 'puma',       '3.12.2'
@@ -22,6 +22,7 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'mailcatcher', require: false
 end
 
 group :test do
