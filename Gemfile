@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# NOTE: if updating ruby version ALSO update .ruby-version
 ruby '2.6.5'
 
 gem 'rails',      '6.0.2.1'
