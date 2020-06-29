@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.6.5'
 
 gem 'rails',      '6.0.2.1'
 gem 'puma',       '3.12.2'
@@ -11,6 +11,10 @@ gem 'sass-rails', '5.1.0'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
+# NOTE: bundle install will fail to install page unless
+# this is executed 1st:
+# 1. brew update
+# 2. brew install postgresql
 gem 'pg', '1.1.4'
 
 group :development, :test do
