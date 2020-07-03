@@ -15,6 +15,7 @@ WORKDIR /friend_reminder_app
 # Copy the main application.
 COPY . ./
 
+# install bundler and gems
 RUN gem install bundler && bundle install
 
 # Expose port 3000 to the Docker host, so we can access it

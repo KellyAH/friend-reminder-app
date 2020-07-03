@@ -35,7 +35,10 @@
 yarn-debug.log*
 .yarn-integrity
 
+# ignore rubymine config files
 .idea/workspace.xml
 .idea/*
-.generators
+
+# ignore auto generated ruby plugin files
 .rakeTasks
+.generators
