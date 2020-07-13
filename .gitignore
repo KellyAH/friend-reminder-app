@@ -42,3 +42,6 @@ yarn-debug.log*
 # ignore auto generated ruby plugin files
 .rakeTasks
 .generators
+
+# simplecov reports
+coverage/
