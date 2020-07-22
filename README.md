@@ -65,6 +65,13 @@ Rails server automatically starts when running the container. See [Local Docker 
 * Go to Friends page [https://friend-reminder-app.herokuapp.com/friends](https://friend-reminder-app.herokuapp.com/friends)
 * Go to Events page [https://friend-reminder-app.herokuapp.com/events](https://friend-reminder-app.herokuapp.com/events)
 
+# Run Tests
+
+## Unit Tests
+Run all unit tests with: `rspec`
+
+# Codecov Report
+After running unit tests, Open coverage/index.html in a web browser.
 
 ## ToDo
 See [Friend-reminder-app Planning doc](https://docs.google.com/document/d/1RC6Yu1T5fuwjNYEb6hjdXqkopKkbILrpYNkQJKn10Cg/edit)
