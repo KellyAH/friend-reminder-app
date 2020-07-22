@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:2.6.5
 MAINTAINER k_ahong@yahoo.com
 
 # Install apt based dependencies required to run Rails as
