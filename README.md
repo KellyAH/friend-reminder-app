@@ -71,13 +71,14 @@ Rails server automatically starts when running the container. See [Local Docker 
 Run all unit tests with: `rspec`
 
 ## Using Mailcatcher
-Use mailcatcher to catch emails sent by the app.
+Use mailcatcher to test sending and catching emails on your local.
 
 Install and start it via:
 1. `gem install mailcatcher`
 2. `mailcatcher`
+3. Go to the frontend at: `http://127.0.0.1:1080/`
 
-Send an email using the rake task: ``
+Send an email using the rake task: `rake mail:send_reminder`
 
 # Codecov Report
 After running unit tests, Open coverage/index.html in a web browser.
