@@ -7,8 +7,7 @@ ruby '2.6.5'
 gem 'rails',      '6.0.2.1'
 gem 'puma',       '3.12.2'
 gem 'sass-rails', '5.1.0'
-# NOTE: if need to use webpacker for JS FE stuff, uncomment webpacker in gemfile and install node, install yarn
-# gem 'webpacker',  '4.0.7'
+gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
