@@ -65,6 +65,23 @@ Rails server automatically starts when running the container. See [Local Docker 
 * Go to Friends page [https://friend-reminder-app.herokuapp.com/friends](https://friend-reminder-app.herokuapp.com/friends)
 * Go to Events page [https://friend-reminder-app.herokuapp.com/events](https://friend-reminder-app.herokuapp.com/events)
 
+# Run Tests
+
+## Unit Tests
+Run all unit tests with: `rspec`
+
+## Using Mailcatcher
+Use mailcatcher to test sending and catching emails on your local.
+
+Install and start it via:
+1. `gem install mailcatcher`
+2. `mailcatcher`
+3. Go to the frontend at: `http://127.0.0.1:1080/`
+
+Send an email using the rake task: `rake mail:send_reminder`
+
+# Codecov Report
+After running unit tests, Open coverage/index.html in a web browser.
 
 ## ToDo
 See [Friend-reminder-app Planning doc](https://docs.google.com/document/d/1RC6Yu1T5fuwjNYEb6hjdXqkopKkbILrpYNkQJKn10Cg/edit)
