@@ -39,6 +39,9 @@ yarn-debug.log*
 .idea/workspace.xml
 .idea/*
 
-# ignore auto generated ruby plugin files
+# Ignore auto generated ruby plugin files
 .rakeTasks
 .generators
+
+# Ignore simplecov reports
+coverage/
