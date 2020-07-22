@@ -23,12 +23,12 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+# Don't add mailcatcher. It will conflict with your applications gems at some point.
 group :development do
   gem 'web-console',           '4.0.1'
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
-  gem 'mailcatcher', require: false
 end
 
 group :test do
