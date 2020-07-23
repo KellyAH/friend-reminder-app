@@ -11,7 +11,7 @@ gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
-# NOTE: bundle install will fail to install page unless
+# NOTE: bundle install will fail to install postgres unless
 # this is executed 1st:
 # 1. brew update
 # 2. brew install postgresql
