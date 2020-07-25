@@ -20,6 +20,7 @@ gem 'pg', '1.1.4'
 group :development, :test do
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 # Don't add mailcatcher. It will conflict with your applications gems at some point.
