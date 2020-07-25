@@ -1,4 +1,5 @@
 class Friend < ApplicationRecord
+  # narrow db query to get specific data for spec tests
   scope :active_friends, -> { where(status: 'active') }
   scope :pending_friends, -> { where(status: 'pending') }
   has_many :events, dependent: :destroy
