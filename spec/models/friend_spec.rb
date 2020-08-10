@@ -1,32 +1,32 @@
 require 'rails_helper'
 
+# Test that model can talk to DB.
 RSpec.describe Friend, type: :model do
   context 'validation tests' do
     it 'ensures first name presence' do
-      friend = Friend.new(last_name: 'Doe', email: 'test@test.com', status: 'pending').save
-      expect(friend).to eq(false)
+      record_created = Friend.new(last_name: 'Doe', email: 'test@test.com', status: 'pending').save
+      expect(record_created).to eq(false)
     end
 
     it 'ensures last name presence' do
-      friend = Friend.new(first_name: 'Jane', email: 'test@test.com', status: 'pending').save
-      expect(friend).to eq(false)
+      record_created = Friend.new(first_name: 'Jane', email: 'test@test.com', status: 'pending').save
+      expect(record_created).to eq(false)
     end
 
     it 'ensures email presence' do
-      friend = Friend.new(first_name: 'Jane', last_name: 'Doe', status: 'pending').save
-      expect(friend).to eq(false)
+      record_created = Friend.new(first_name: 'Jane', last_name: 'Doe', status: 'pending').save
+      expect(record_created).to eq(false)
     end
 
-    # TODO fix this
-    # it 'ensures default status is active' do
-    #   friend = Friend.new(first_name: 'Jane', last_name: 'Doe', email: 'test@test.com').save
-    #   expect(friend).to eq(true)
-    #   expect(friend.status).to eq('active')
-    # end
+    it 'ensures default status is active' do
+      record_created = Friend.new(first_name: 'Jane', last_name: 'Doe', email: 'foobar@foo.com').save
+      expect(record_created).to eq(true)
+      expect(Friend.first.status).to eq('active')
+    end
 
     it 'should save successfully' do
-      friend = Friend.new(first_name: 'Jane', last_name: 'Doe', email: 'test@test.com', status: 'pending').save
-      expect(friend).to eq(true)
+      record_created = Friend.new(first_name: 'Jane', last_name: 'Doe', email: 'test@test.com', status: 'pending').save
+      expect(record_created).to eq(true)
     end
   end
 

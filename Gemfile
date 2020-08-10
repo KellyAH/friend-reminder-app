@@ -11,7 +11,7 @@ gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
-# NOTE: bundle install will fail to install page unless
+# NOTE: bundle install will fail to install postgres unless
 # this is executed 1st:
 # 1. brew update
 # 2. brew install postgresql
@@ -20,6 +20,7 @@ gem 'pg', '1.1.4'
 group :development, :test do
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 # Don't add mailcatcher. It will conflict with your applications gems at some point.
@@ -34,6 +35,7 @@ group :test do
   gem 'capybara',           '3.28.0'
   gem 'selenium-webdriver', '3.142.4'
   gem 'webdrivers',         '4.1.2'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
