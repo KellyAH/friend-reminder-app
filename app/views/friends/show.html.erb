@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<% if @friend.photo %>
+  <p>
+  <strong>Photo:</strong>
+  <%= image_tag @friend.photo_url %>
+  </p>
+<% end %>
+
+
 <p>
   <strong>First name:</strong>
   <%= @friend.first_name %>

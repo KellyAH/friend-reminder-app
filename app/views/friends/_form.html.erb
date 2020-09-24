@@ -12,6 +12,17 @@
   <% end %>
 
   <div class="field">
+    #TODO: add ability to delete photo from FE
+    <% if @friend.photo %>
+      <%= image_tag @friend.photo_url %>
+<!-- FYI you can also do this:     <img src="<%#= @friend.photo_url %>" />-->
+    <% end %>
+
+    <%= form.hidden_field :photo, value: friend.cached_photo_data %>
+    <%= form.file_field :photo %>
+  </div>
+
+  <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
   </div>

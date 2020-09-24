@@ -6,6 +6,8 @@ class Friend < ApplicationRecord
   validates_presence_of :first_name, :last_name, :email, :status
   enum status: { active: 'active', deactivated: 'deactivated', pending: 'pending' }
 
+  include PhotoUploader::Attachment(:photo) # adds an `photo` virtual attribute
+
   def name
     "#{first_name} #{last_name}"
   end
