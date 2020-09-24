@@ -35,13 +35,21 @@ Rails.application.configure do
   # config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
 
   # set mailer config for local testing on mail catcher
+  # mailgun integration for PROD.
+  # ENV vars for prod are set in Heroku
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = {
+      :authentication => :plain,
+      :address => ENV["MAILGUN_SMTP_SERVER"],
+      :port => ENV["MAILGUN_SMTP_PORT"],
+      :domain => ENV["MAILGUN_DOMAIN"],
+      :user_name => ENV["MAILGUN_SMTP_LOGIN"],
+      :password => ENV["MAILGUN_SMTP_PASSWORD"]
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
