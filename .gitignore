@@ -45,3 +45,10 @@ yarn-debug.log*
 
 # Ignore simplecov reports
 coverage/
+
+# Ignore precompiled javascript packs
+/public/packs
+/public/packs-test
+
+# Ignore profile images uploaded for friend
+/public/uploads
